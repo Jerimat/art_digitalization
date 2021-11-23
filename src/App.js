@@ -42,7 +42,7 @@ class App extends Component {
   }
 
   generateMetaData = () => {
-    console.log()
+    //TODO
   }
 
   addToBlockchain = () => {
@@ -52,10 +52,10 @@ class App extends Component {
   onSubmit = (event) => {
     event.preventDefault()
     console.log('Submitting the form')
-    // Add the artwork to IPFS
-    this.addToIPFS()
     // Generate the Metadata for the artwork
     this.generateMetaData()
+    // Add the artwork to IPFS
+    this.addToIPFS()
     // Add the Artwork Metadata on the Blockchain
     this.addToBlockchain()
   }
