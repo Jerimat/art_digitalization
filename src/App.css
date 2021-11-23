@@ -1,4 +1,4 @@
-.App {
+export .App {
   text-align: center;
 }
 
@@ -28,11 +28,18 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App input, textarea{
+    display: block;
+    box-sizing: border-box;
+    margin: .9vw 0 ;
+    padding: .5rem .8rem .5rem .8rem;
+    border: 1px solid #018f84;
 }
+/*@keyframes App-logo-spin {*/
+/*  from {*/
+/*    transform: rotate(0deg);*/
+/*  }*/
+/*  to {*/
+/*    transform: rotate(360deg);*/
+/*  }*/
+/*}*/
