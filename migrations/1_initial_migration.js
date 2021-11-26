@@ -1,6 +1,5 @@
-const Migrations = artifacts.require('Migrations')
+const Migrations = artifacts.require("Migrations");
 
-module.exports = async function(deployer, networks, accounts) {
-    // Deploy the smart contract on the blockchain
-    await deployer.deploy(Migrations);
+module.exports = function (deployer) {
+  deployer.deploy(Migrations);
 };
