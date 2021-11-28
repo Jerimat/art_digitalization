@@ -26,6 +26,7 @@ module.exports = {
    * $ truffle test --network <network-name>
    */
 
+  contracts_build_directory: "./src/abi",
   networks: {
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
@@ -35,9 +36,16 @@ module.exports = {
 
     development: {
       host: "127.0.0.1",     // Localhost (default: none)
-      port: 7545,            // Standard Ethereum port (default: none)
+      port: 8545,            // Standard Ethereum port (default: none)
       network_id: "5777",       // Any network (default: none)
     },
+    rinkeby: {
+      host: "127.0.0.1",
+      port: 8545,
+      network_id: 4,
+      gas_limit: 4700000
+    },
+
     contract_directory: "../contracts",
     // Another network with more advanced options...
     // advanced: {
@@ -67,9 +75,9 @@ module.exports = {
   },
 
   // Set default mocha options here, use special reporters etc.
-  // mocha: {
-    // timeout: 100000
-  // },
+  mocha: {
+    timeout: 100000
+  },
 
   // Configure your compilers
   compilers: {
