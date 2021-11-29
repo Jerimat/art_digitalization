@@ -12,9 +12,9 @@ class DigitalisationForm extends React.Component {
             ipfsAddress: 'http://localhost:8080/ipfs/',
             // ipfsAddress: 'ipfs://', //TODO: Check network config to enable GET (This address doesn't work on Chrome)
             artwork: {
-                name: '',
                 description: '',
-                image: ''
+                image: '',
+                name: ''
                 // TODO: Add possibility to define attributes
             }
         }
