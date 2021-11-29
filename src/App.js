@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      imageURI: '',
+      imageURI: 'https://upload.wikimedia.org/wikipedia/commons/2/24/NFT_Icon.png',
       contract: null
     };
   }
@@ -37,8 +37,8 @@ class App extends Component {
   async loadWeb3() {
     if(window.ethereum) {
       window.web3 = new Web3(window.ethereum)
-      await window.ethereum.enable()
-    } if (window.web3) {
+      await window.ethereum.request({ method: 'eth_requestAccounts' })
+    } else if (window.web3) {
       window.web3 = new Web3(window.web3.currentProvider)
     } else {
       window.alert('Please use Metamask!')
@@ -46,7 +46,7 @@ class App extends Component {
   }
 
   getImageURI = (nftImageURI) => {
-    //TODO: Error when trying to fetch the image uploaded on IPFS ("GET [img_address] net::ERR_BLOCKED_BY_CLIENT")
+    //The image update is blocked by AdBlock/Brave Shield
     this.setState({imageURI: nftImageURI})
   }
 
@@ -55,7 +55,7 @@ class App extends Component {
         <div className="App">
           <header className="App-header">
             <>
-              <img src={this.state.imageURI}/>
+              <img src={this.state.imageURI} alt={'nft_logo'} className={'nft_image'}/>
               <h2>NFT upload form</h2>
               <DigitalisationForm parentCallback={this.getImageURI} dataFromParent={this.state.contract}/>
             </>
