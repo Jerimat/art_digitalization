@@ -72,6 +72,7 @@ class DigitalisationForm extends React.Component {
     }
 
     addToBlockchain = async (pathMetadata) => {
+        //TODO: Try to mint the NFT through an L2 solution
         const web3 = new Web3(Web3.givenProvider)
         const contract = this.props.dataFromParent
         web3.eth.getAccounts().then((accounts) => {
